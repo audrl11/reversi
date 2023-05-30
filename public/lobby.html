@@ -14,15 +14,21 @@
     .headerrow {
       background-color: darkseagreen;
     }
-    .join_room_response {
-      background-color: rgb(117, 121, 117);
-      color:aliceblue;
-      margin: 1px 1px 1px 10px;
+
+    #messagePane {
+      background-color: rgb(228, 255, 228);
     }
+
+    .join_room_response,
+    .left_room_response {
+      background-color: rgb(109, 140, 109);
+      color:aliceblue;
+    }
+    
     .chat_message {
       font-size:125%;
       margin: 1px 1px 1px 1px;
-      color:steelblue;
+      color:rgb(0, 0, 0);
     }
   </style>
 
@@ -34,30 +40,39 @@
   <div class="container-fluid">
     <div class="row m-3 headerrow">
       <div class="col text-center">
-        <h1>Lobby</h1>
+        <h3 id="lobbyTitle">Lobby</h3>
       </div>
     </div>
   </div>
 
   <div class="row m-3">
     <div class="col">
-      <div class="row align-items-center justify-content-center m-3">
-        <div class="col-8">
+      <div class="row align-items-start justify-content-center">
+        <div class="col-md-4">
+          <h4>Players</h4>
+          <div id="players" class="align-items-end text-right m-3">
+          </div>
+        </div>
+
+        <div class="col-md-8" id="messagePane">
+          <div>
+            <h1>Messages</h1>
+          </div>
           <div class="input-group">
             <input type="text" class="form-control text-nowrap" id="chatMessage" placeholder="Enter your message here" aria-label="Enter your message to send to the chat room"/>
             <button type="submit" class="btn-primary text-nowrap" id="chatButton"
               onclick="sendChatMessage()">Send</button>
           </div>
+          <div id="messages">
         </div>
       </div>
-      <h1>Messages</h1>
-      <div id="messages">
 
       </div>
     </div>
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha384-NXgwF8Kv9SSAr+jemKKcbvQsz+teULH/a5UNJvZc6kP47hZgl62M1vGnw6gHQhb1" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha384-4D3G3GikQs6hLlLZGdz5wLFzuqE9v4yVGAcOH86y23JqBDPzj9viv0EqyfIa6YUL" crossorigin="anonymous"></script>
   <script src="https://cdn.socket.io/4.6.1/socket.io.min.js" integrity="sha384-KA7m0DwgQGmeRC6Xre3hJO+ZxpanOauVh4Czdqbg8lDKJ3bZZYVYmP+y4F31x40L" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
 </body>
