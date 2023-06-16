@@ -1,14 +1,14 @@
 body {
-    background-color: rgb(175, 215, 175);
+    background-color: #006994;
 }
 
 .headerrow, #messagePane {
-    background-color: rgb(228, 255, 228);
+    background-color: #93c0d1;
 }
 
 .join_room_response,
 .left_room_response {
-    background-color: rgb(109, 140, 109);
+    background-color: #02587a;
     color: aliceblue;
 }
 
